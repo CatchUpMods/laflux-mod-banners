@@ -15,7 +15,8 @@ class BannerSeeder extends Seeder
                      $data = [
                         'name' => 'Banners'
                         ,'vendor' => 'ExtensionValley'
-                        ,'description' => 'laflux-module'
+                        ,'description' => 'Banner module for laflux'
+                        ,'package_type' => 'laflux-module'
                         ,'version' => '1.0.0'
                         ,'is_paid' => '0'
                         ,'status' => 0
