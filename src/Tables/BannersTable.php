@@ -20,7 +20,7 @@ class BannersTable
 
     public $model_name = 'ExtensionsValley\Banners\Models\BannerModel';
 
-    public $listable = ['id' => 'ID', 'media' => 'Media', 'name' => 'Name', 'category_id' => 'Category Name','ordering' => 'Order By','status' => 'Status'];
+    public $listable = ['id' => 'ID', 'media' => 'Media', 'name' => 'Name', 'status' => 'Status','ordering' => 'Order By','category_id' => 'Category'];
 
     public $overrideview = "";
 
@@ -58,7 +58,7 @@ class BannersTable
         $filter_status = \Input::has('filter_status') ? \Input::get('filter_status') : '-1';
 
           $banners = \DB::table('banners')
-              ->select('id', 'media', 'name', 'status', 'category_id', 'ordering');
+              ->select('id', 'media', 'name', 'category_id', 'ordering','status');
 
         if($filter_trashed == 1){
             $banners = $banners->where('deleted_at','<>', NULL);
